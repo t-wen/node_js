@@ -8,12 +8,12 @@ var listener2 = function listener2() {
 }
 eventEmitter.addListener('connection', listener1);
 eventEmitter.on('connection', listener2);
-var eventListener2 = require('events').EventEmitter.listenerCount(eventEmitter,'connection');
+var eventListeners = require('events').EventEmitter.listenerCount(eventEmitter,'connection');
 console.log(eventListeners + " 个监听器监听连接事件。");
 eventEmitter.emit('connection');
-eventEmitter.removerListener('connection', listener1);
+eventEmitter.removeListener('connection', listener1);
 console.log("listener1 不再受监听。");
 eventEmitter.emit('connection');
-eventListeners = require('events').EvenEmitter.listenerCount(eventEmitter,'connection');
+eventListeners = require('events').EventEmitter.listenerCount(eventEmitter,'connection');
 console.log(eventListeners + " 个监听器监听连接事件。");
 console.log("程序执行完毕。");
